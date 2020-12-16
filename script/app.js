@@ -38,11 +38,11 @@ let showCOVIDCountry = function(json)
 
 	changeProgressBar(json.cases, json.recovered)
 	country.innerHTML = "Selected country: "+json.country
-    popu.innerHTML = "Population: " + (json.population).toLocaleString()
-	cases.innerHTML = "Total cases: " +(json.cases).toLocaleString()
-	tcases.innerHTML = "Cases today: " +(json.todayCases).toLocaleString()
-	recovered.innerHTML = "Total recovered: " +(json.recovered).toLocaleString()
-	death.innerHTML = "Total deaths: " +(json.deaths).toLocaleString()
+    popu.innerHTML = "Population: " + ((json.population).toLocaleString()).replace(/,/g, ' ')
+	cases.innerHTML = "Total cases: " +((json.cases).toLocaleString()).replace(/,/g, ' ')
+	tcases.innerHTML = "Cases today: " +((json.todayCases).toLocaleString()).replace(/,/g, ' ')
+	recovered.innerHTML = "Total recovered: " +((json.recovered).toLocaleString()).replace(/,/g, ' ')
+	death.innerHTML = "Total deaths: " +((json.deaths).toLocaleString()).replace(/,/g, ' ')
 };
 
 let showCOVIDWorld = function(json){
@@ -52,11 +52,11 @@ let showCOVIDWorld = function(json){
 	let recovered = document.getElementById("w_recovered")
 	let death = document.getElementById("w_deaths")
 	worldCases = json.cases
-	popu.innerHTML = "Population: " + (json.population).toLocaleString()
-	cases.innerHTML = "Total cases: " +(json.cases).toLocaleString()
-	tcases.innerHTML = "Cases today: " +(json.todayCases).toLocaleString()
-	recovered.innerHTML = "Total recovered: " +(json.recovered).toLocaleString()
-	death.innerHTML = "Total deaths: " +(json.deaths).toLocaleString()
+	popu.innerHTML = "Population: " + ((json.population).toLocaleString()).replace(/,/g, ' ')
+	cases.innerHTML = "Total cases: " +((json.cases).toLocaleString()).replace(/,/g, ' ')
+	tcases.innerHTML = "Cases today: " +((json.todayCases).toLocaleString()).replace(/,/g, ' ')
+	recovered.innerHTML = "Total recovered: " +((json.recovered).toLocaleString()).replace(/,/g, ' ')
+	death.innerHTML = "Total deaths: " +((json.deaths).toLocaleString()).replace(/,/g, ' ')
 
 	getAPICountry("be");
 }
