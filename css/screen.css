@@ -265,7 +265,7 @@ hr {
 a {
     --link-transition: all var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     transition: var(--link-transition);
-    color: var(--link-color, var(--global-color-alpha));
+    color:  var(--global-page-color);
     outline-color: var(--link-boxShadowColor);
     outline-width: medium;
     outline-offset: 2px;
