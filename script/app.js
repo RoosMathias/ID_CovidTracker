@@ -31,12 +31,14 @@ let showCOVIDCountry = function(json)
     let cases = document.getElementById("cases")
 	let popu = document.getElementById("population")
 	let tcases = document.getElementById("todaycases")
+	let recovered = document.getElementById("recovered")
 	let death = document.getElementById("deaths")
-	changeProgressBar(json.cases)
+	changeProgressBar(json.cases, json.recovered)
 	country.innerHTML = "Selected country: "+json.country
     popu.innerHTML = "Population: " + json.population
 	cases.innerHTML = "Total cases: " +json.cases
 	tcases.innerHTML = "Cases today: " +json.todayCases
+	recovered.innerHTML = "Total recovered: " +json.recovered
 	death.innerHTML = "Total deaths: " +json.deaths
     console.log(json.countryInfo.flag)
 };
@@ -45,22 +47,30 @@ let showCOVIDWorld = function(json){
     let cases = document.getElementById("w_cases")
 	let popu = document.getElementById("w_population")
 	let tcases = document.getElementById("w_todaycases")
+	let recovered = document.getElementById("w_recovered")
 	let death = document.getElementById("w_deaths")
 	worldCases = json.cases
     popu.innerHTML = "Population: " + json.population
 	cases.innerHTML = "Total cases: " +json.cases
 	tcases.innerHTML = "Cases today: " +json.todayCases
+	recovered.innerHTML = "Total recovered: " +json.recovered
 	death.innerHTML = "Total deaths: " +json.deaths
 
 	getAPICountry("be");
 }
 
-const changeProgressBar = function(cases){
+const changeProgressBar = function(cases, recovered){
 		let percentage = (cases/worldCases)*100
 		var n = percentage.toFixed(2);
 		document.getElementById("percentage").innerHTML ="This shows the percentage of cases compared to the world. " + `(${n}%)`;
         document.querySelector('.js-status').style.width = `${percentage}%`;
-        document.querySelector('.js-status').style.background = 'var(--global-page-bars)';
+		document.querySelector('.js-status').style.background = 'var(--global-page-bars)';
+		
+		let percentage2 = (recovered/cases)*100
+		var n = percentage2.toFixed(2);
+		document.getElementById("percentage2").innerHTML ="This shows the percentage of people recovered in a country. " + `(${n}%)`;
+        document.querySelector('.js-status2').style.width = `${percentage2}%`;
+        document.querySelector('.js-status2').style.background = 'var(--global-page-bars)';
 };
 
 /*--- API Functions ---*/ 

@@ -835,6 +835,10 @@ font-weight: 600;
     
 }
 
+#percentage2{
+    margin-top: 1em;
+}
+
 /* This allows c-card-app__body and __footer to have equal padding everywhere */
 
 .c-card-app__body > *:last-child,
@@ -1270,13 +1274,13 @@ more padding on the right to avoid overlap
     Password toggle custom checkbox
 */
 
-.c-password-toggle-container {
+.c-searchbar-container {
     position: relative;
     display: block;
 }
 
-.c-password-toggle {
-    --password-toggle__symbol-fill: var(--global-color-neutral-x-light);
+.c-searchbar {
+    --searchbar__symbol-fill: var(--global-color-neutral-x-light);
     position: absolute;
     top: 0;
     right: 0;
@@ -1284,7 +1288,7 @@ more padding on the right to avoid overlap
     display: block;
 }
 
-.c-password-toggle__label {
+.c-searchbar__label {
     display: flex;
     align-items: center;
     /* top: 0;
@@ -1295,28 +1299,28 @@ more padding on the right to avoid overlap
     padding: 14px 16px;
 }
 
-.c-password-toggle__symbol {
+.c-searchbar__symbol {
     display: block;
     width: 20px;
     height: 20px;
-    fill: var(--password-toggle__symbol-fill);
+    fill: var(--searchbar__symbol-fill);
 }
 
-.c-password-toggle__symbol--hide {
+.c-searchbar__symbol--hide {
     display: none;
 }
 
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--hide {
+.c-searchbar__checkbox:checked + .c-searchbar__label .c-searchbar__symbol--hide {
     display: block;
 }
 
-.c-password-toggle__checkbox:checked + .c-password-toggle__label .c-password-toggle__symbol--show {
+.c-searchbar__checkbox:checked + .c-searchbar__label .c-searchbar__symbol--show {
     display: none;
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-password-toggle {
-        --password-toggle__symbol-fill: var(--global-color-neutral-x-dark);
+    .c-searchbar {
+        --searchbar__symbol-fill: var(--global-color-neutral-x-dark);
     }
 }
 
