@@ -60,17 +60,33 @@ let showCOVIDWorld = function(json){
 }
 
 const changeProgressBar = function(cases, recovered){
+	
 		let percentage = (cases/worldCases)*100
 		var n = percentage.toFixed(2);
-		document.getElementById("percentage").innerHTML ="This shows the percentage of cases compared to the world. " + `(${n}%)`;
-        document.querySelector('.js-status').style.width = `${percentage}%`;
-		document.querySelector('.js-status').style.background = 'var(--global-page-bars)';
+		if (n <=1) {
+			document.getElementById("percentage").innerHTML ="This shows the percentage of cases compared to the world. " + `(${n}%)`;
+			document.querySelector('.js-status').style.width = `2%`;
+			document.querySelector('.js-status').style.background = 'var(--global-page-bars)';
+		}
+		else{
+			document.getElementById("percentage").innerHTML ="This shows the percentage of cases compared to the world. " + `(${n}%)`;
+			document.querySelector('.js-status').style.width = `${percentage}%`;
+			document.querySelector('.js-status').style.background = 'var(--global-page-bars)';
+		}
+		
 		
 		let percentage2 = (recovered/cases)*100
-		var n = percentage2.toFixed(2);
-		document.getElementById("percentage2").innerHTML ="This shows the percentage of people recovered in a country. " + `(${n}%)`;
-        document.querySelector('.js-status2').style.width = `${percentage2}%`;
-        document.querySelector('.js-status2').style.background = 'var(--global-page-bars)';
+		var n2 = percentage2.toFixed(2);
+		if (n2 <=1) {
+			document.getElementById("percentage2").innerHTML ="This shows the percentage of people recovered in a country. " + `(${n2}%)`;
+			document.querySelector('.js-status2').style.width = `2%`;
+			document.querySelector('.js-status2').style.background = 'var(--global-page-bars)';
+		} else {
+			document.getElementById("percentage2").innerHTML ="This shows the percentage of people recovered in a country. " + `(${n2}%)`;
+			document.querySelector('.js-status2').style.width = `${percentage2}%`;
+			document.querySelector('.js-status2').style.background = 'var(--global-page-bars)';
+		}
+		
 };
 
 /*--- API Functions ---*/ 

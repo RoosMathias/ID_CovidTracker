@@ -628,13 +628,13 @@ input::placeholder {
 
 .c-progressbar {
     background-color: var(--global-page-backgroundColor);
-    border: 1px solid var(--global-page-color);
-    /*border-radius: 40px;*/
+    border: 0px solid var(--global-page-color);
+    border-radius: 40px;
 }
 
 .c-progressbar-status {
-    /*border-radius: 40px;*/
-    height: 40px;
+    border-radius: 40px;
+    height: 10px;
     transition: width 2s;
 }
 
